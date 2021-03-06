@@ -426,8 +426,8 @@ public class DataUsageModule extends ReactContextBaseJavaModule {
         //long wifiBytesRx = networkStatsHelper.getAllRxBytesMobile(getReactApplicationContext()) + networkStatsHelper.getAllRxBytesWifi();
         //long wifiBytesTx = networkStatsHelper.getAllRxBytesMobile(getReactApplicationContext()) + networkStatsHelper.getAllRxBytesWifi();
 
-        double gsmBytesRx = (double) networkStatsHelper.getPackageRxBytesMobile(getReactApplicationContext()) + networkStatsHelper.getPackageRxBytesMobile(getReactApplicationContext(), startDate, endDate);
-        double gsmBytesTx = (double) networkStatsHelper.getPackageTxBytesMobile(getReactApplicationContext()) + networkStatsHelper.getPackageRxBytesMobile(getReactApplicationContext(), startDate, endDate);
+        double gsmBytesRx = (double) networkStatsHelper.getPackageRxBytesWifi(startDate, endDate);
+        double gsmBytesTx = (double) networkStatsHelper.getPackageTxBytesWifi(startDate, endDate);
         double total = gsmBytesRx + gsmBytesTx;
         Log.i(TAG, "##### getNetworkManagerStats - " + packageName + " - tx: " + gsmBytesTx + " | rx: " + gsmBytesRx + " | total: " + total);
 
